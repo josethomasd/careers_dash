@@ -26,7 +26,11 @@ class Admin extends CI_Controller {
 	// Show form in view page i.e view_page.php
 
 	public function index(){
-		$this->load->view('index');
+		$this->load->database();
+		$this->load->model('select');
+		$data['count'] = $this->select->get_count();
+
+		$this->load->view('index',$data);
 
 	}
 	

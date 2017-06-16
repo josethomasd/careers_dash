@@ -48,7 +48,7 @@
   <div class="subnavbar-inner">
     <div class="container">
       <ul class="mainnav">
-        <li><a href="index"><i class="icon-dashboard"></i><span>Dashboard</span> </a> </li>
+        <li><a href="admin"><i class="icon-dashboard"></i><span>Dashboard</span> </a> </li>
         <li class="active"><a href="form_show"><i class="icon-plus-sign"></i><span>Add Job</span> </a></li>
         <li><a href="jobs_admin"><i class="icon-briefcase"></i><span>View Jobs</span> </a></li>
       </ul>
