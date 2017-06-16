@@ -12,6 +12,12 @@
          //data is retrive from this query  
          $query = $this->db->get('careers');  
          return $query;  
-      }  
+      }
+      public function get_count()
+      {
+         $query = $this->db->query('SELECT * FROM careers');
+
+         return $query->num_rows();
+      }
    }  
 ?>  

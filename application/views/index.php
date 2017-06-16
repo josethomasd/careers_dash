@@ -48,7 +48,7 @@
   <div class="subnavbar-inner">
     <div class="container">
       <ul class="mainnav">
-        <li class="active"><a href="index"><i class="icon-dashboard"></i><span>Dashboard</span> </a> </li>
+        <li class="active"><a href="admin"><i class="icon-dashboard"></i><span>Dashboard</span> </a> </li>
         <li><a href="form_show"><i class="icon-plus-sign"></i><span>Add Job</span> </a></li>
         <li><a href="jobs_admin"><i class="icon-briefcase"></i><span>View Jobs</span> </a></li>
       </ul>
@@ -73,7 +73,7 @@
                 <div class="widget-content">
                   <h6 class="bigstats">A fully responsive premium quality admin template built on Twitter Bootstrap by <a href="http://www.egrappler.com" target="_blank">EGrappler.com</a>.  These are some dummy lines to fill the area.</h6>
                   <div id="big_stats" class="cf">
-                    <div class="stat"> <i class="icon-anchor"></i> <span class="value">851</span> </div>
+                    <div class="stat"> <i class="icon-anchor"></i> <span class="value"><?php echo $count; ?></span> </div>
                     <!-- .stat -->
                     
                     <div class="stat"> <i class="icon-thumbs-up-alt"></i> <span class="value">423</span> </div>
