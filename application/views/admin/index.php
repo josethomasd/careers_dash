@@ -21,7 +21,7 @@
 <div class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span
-                    class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span> </a><a class="brand" href="index.html">Jobs Dashboard </a>
+                    class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span> </a><a class="brand" href="index">Jobs Dashboard </a>
       <div class="nav-collapse">
         <ul class="nav pull-right">
 
@@ -29,33 +29,35 @@
                             class="icon-user"></i> Admin<b class="caret"></b></a>
             <ul class="dropdown-menu">
               <li><a href="javascript:;">Profile</a></li>
-              <li><a href="javascript:;">Logout</a></li>
+              <li><a href="logout">Logout</a></li>
             </ul>
           </li>
         </ul>
+        <!--
         <form class="navbar-search pull-right">
           <input type="text" class="search-query" placeholder="Search">
         </form>
+      -->
       </div>
-      <!--/.nav-collapse --> 
+      <!--/.nav-collapse -->
     </div>
-    <!-- /container --> 
+    <!-- /container -->
   </div>
-  <!-- /navbar-inner --> 
+  <!-- /navbar-inner -->
 </div>
 <!-- /navbar -->
 <div class="subnavbar">
   <div class="subnavbar-inner">
     <div class="container">
       <ul class="mainnav">
-        <li class="active"><a href="admin"><i class="icon-dashboard"></i><span>Dashboard</span> </a> </li>
+        <li class="active"><a href="index"><i class="icon-dashboard"></i><span>Dashboard</span> </a> </li>
         <li><a href="form_show"><i class="icon-plus-sign"></i><span>Add Job</span> </a></li>
         <li><a href="jobs_admin"><i class="icon-briefcase"></i><span>View Jobs</span> </a></li>
       </ul>
     </div>
-    <!-- /container --> 
+    <!-- /container -->
   </div>
-  <!-- /subnavbar-inner --> 
+  <!-- /subnavbar-inner -->
 </div>
 <!-- /subnavbar -->
 <div class="main">
@@ -75,24 +77,24 @@
                   <div id="big_stats" class="cf">
                     <div class="stat"> <i class="icon-anchor"></i> <span class="value"><?php echo $count; ?></span> </div>
                     <!-- .stat -->
-                    
+
                     <div class="stat"> <i class="icon-thumbs-up-alt"></i> <span class="value">423</span> </div>
                     <!-- .stat -->
-                    
+
                     <div class="stat"> <i class="icon-twitter-sign"></i> <span class="value">922</span> </div>
                     <!-- .stat -->
-                    
+
                     <div class="stat"> <i class="icon-bullhorn"></i> <span class="value">25%</span> </div>
-                    <!-- .stat --> 
+                    <!-- .stat -->
                   </div>
                 </div>
-                <!-- /widget-content --> 
-                
+                <!-- /widget-content -->
+
               </div>
             </div>
-          </div> 	
-		  
-          <!-- /widget --> 
+          </div>
+
+          <!-- /widget -->
         </div>
         <!-- /span6 -->
         <div class="span6">
@@ -107,20 +109,23 @@
                                             class="shortcut-icon icon-bookmark"></i><span class="shortcut-label">Bookmarks</span> </a><a href="javascript:;" class="shortcut"><i class="shortcut-icon icon-signal"></i> <span class="shortcut-label">Reports</span> </a><a href="javascript:;" class="shortcut"> <i class="shortcut-icon icon-comment"></i><span class="shortcut-label">Comments</span> </a><a href="javascript:;" class="shortcut"><i class="shortcut-icon icon-user"></i><span
                                                 class="shortcut-label">Users</span> </a><a href="javascript:;" class="shortcut"><i
                                                     class="shortcut-icon icon-file"></i><span class="shortcut-label">Notes</span> </a><a href="javascript:;" class="shortcut"><i class="shortcut-icon icon-picture"></i> <span class="shortcut-label">Photos</span> </a><a href="javascript:;" class="shortcut"> <i class="shortcut-icon icon-tag"></i><span class="shortcut-label">Tags</span> </a> </div>
-              <!-- /shortcuts --> 
+              <!-- /shortcuts -->
             </div>
-            <!-- /widget-content --> 
+            <!-- /widget-content -->
           </div>
 
           <!-- /widget -->
         </div>
-        <!-- /span6 --> 
+        <!-- /span6 -->
       </div>
-      <!-- /row --> 
+      <!-- /row -->
     </div>
-    <!-- /container --> 
+    <!-- /container -->
   </div>
-  <!-- /main-inner --> 
+  <!-- /main-inner -->
+  <br>
+  <br>
+  <br>
 </div>
 <!-- /main -->
 <div class="extra">
@@ -132,19 +137,16 @@
             <h4>
                 Support</h4>
             <ul>
-                <li><a href="javascript:;">Frequently Asked Questions</a></li>
-                <li><a href="javascript:;">Ask a Question</a></li>
-                <li><a href="javascript:;">Video Tutorial</a></li>
-                <li><a href="javascript:;">Feedback</a></li>
+              <li><a href="mailto:admin@igintho.com">Ask a Question</a></li>
             </ul>
         </div>
         <!-- /span3 -->
       </div>
-      <!-- /row --> 
+      <!-- /row -->
     </div>
-    <!-- /container --> 
+    <!-- /container -->
   </div>
-  <!-- /extra-inner --> 
+  <!-- /extra-inner -->
 </div>
 <!-- /extra -->
 <div class="footer">
@@ -152,25 +154,25 @@
     <div class="container">
       <div class="row">
         <div class="span12"> &copy; 2013-2017.
- <a href="#">Ignitho Technologies. All Rights Reserved</a>. </div>
-        <!-- /span12 --> 
+          <a target="_blank" href="https://www.ignitho.com">Ignitho Technologies. All Rights Reserved</a>. </div>
+        <!-- /span12 -->
       </div>
-      <!-- /row --> 
+      <!-- /row -->
     </div>
-    <!-- /container --> 
+    <!-- /container -->
   </div>
-  <!-- /footer-inner --> 
+  <!-- /footer-inner -->
 </div>
-<!-- /footer --> 
+<!-- /footer -->
 <!-- Le javascript
-================================================== --> 
-<!-- Placed at the end of the document so the pages load faster --> 
-<script src="<?php echo base_url(); ?>js/jquery-1.7.2.min.js"></script> 
-<script src="<?php echo base_url(); ?>js/excanvas.min.js"></script> 
-<script src="<?php echo base_url(); ?>js/chart.min.js" type="text/javascript"></script> 
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="<?php echo base_url(); ?>js/jquery-1.7.2.min.js"></script>
+<script src="<?php echo base_url(); ?>js/excanvas.min.js"></script>
+<script src="<?php echo base_url(); ?>js/chart.min.js" type="text/javascript"></script>
 <script src="<?php echo base_url(); ?>js/bootstrap.js"></script>
- 
-<script src="js/base.js"></script> 
+
+<script src="<?php echo base_url(); ?>js/base.js"></script>
 
 </body>
 </html>

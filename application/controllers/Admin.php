@@ -27,24 +27,29 @@ class Admin extends CI_Controller {
 	// Show form in view page i.e view_page.php
 
 	public function index(){
+		if($this->session->userdata('userId')==''){
+				header("Location: login");
+		}
 		$this->load->database();
 		$this->load->model('select');
 		$data['count'] = $this->select->get_count();
-
-		$this->load->view('index',$data);
+		$this->load->view('admin/index',$data);
 
 	}
 
 	public function login(){
 	        $data = array();
-	        if($this->session->userdata('success_msg')){
-	            $data['success_msg'] = $this->session->userdata('success_msg');
-	            $this->session->unset_userdata('success_msg');
-	        }
-	        if($this->session->userdata('error_msg')){
-	            $data['error_msg'] = $this->session->userdata('error_msg');
-	            $this->session->unset_userdata('error_msg');
-	        }
+	        // if($this->session->userdata('success_msg')){
+	        //     $data['success_msg'] = $this->session->userdata('success_msg');
+	        //     $this->session->unset_userdata('success_msg');
+	        // }
+	        // if($this->session->userdata('error_msg')){
+	        //     $data['error_msg'] = $this->session->userdata('error_msg');
+	        //     $this->session->unset_userdata('error_msg');
+	        // }
+					if($this->session->userdata('userId')!=''){
+							header("Location: index");
+					}
 	        if($this->input->post('loginSubmit')){
 	            $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
 	            $this->form_validation->set_rules('password', 'password', 'required');
@@ -59,30 +64,36 @@ class Admin extends CI_Controller {
 	                if($checkLogin){
 	                    $this->session->set_userdata('isUserLoggedIn',TRUE);
 	                    $this->session->set_userdata('userId',$checkLogin['id']);
-	                    redirect('users/account/');
+	                    redirect('/admin/');
 	                }else{
 	                    $data['error_msg'] = 'Wrong email or password, please try again.';
 	                }
 	            }
 	        }
 	        //load the view
-	        $this->load->view('admin_login', $data);
+	        $this->load->view('admin/admin_login', $data);
     }
 
 	public function form_show() {
-		$this->load->view('insert_view');
+		if($this->session->userdata('userId')==''){
+				header("Location: login");
+		}
+
+		$this->load->view('admin/insert_view');
 
 	}
 	public function jobs_admin(){
-
-		$this->load->database();  
-		//load the model  
-		$this->load->model('select');  
-		//load the method of model  
+		if($this->session->userdata('userId')==''){
+				header("Location: login");
+		}
+		$this->load->database();
+		//load the model
+		$this->load->model('select');
+		//load the method of model
 		$data['h']=$this->select->select();
 
 		$data['title'] = "Careers";
-		$this->load->view('jobs_view',$data);
+		$this->load->view('admin/jobs_view',$data);
 	}
 
 	// When user submit data on view page, Then this function store data in array.
@@ -91,7 +102,7 @@ class Admin extends CI_Controller {
 		$this->load->database();
 		$this->load->model('insert');
 		$data['title'] = "Career data";
-		$this->load->view('insert_view');
+		$this->load->view('admin/insert_view');
 
 		$data = array(
 		'title' => $this->input->post('title'),
@@ -105,14 +116,23 @@ class Admin extends CI_Controller {
 		//Loading View
 		//$this->load->view('jobs_view');
 		header("Location: form_show");
-	
+
 	}
 	public function delete_job($user_id){
 		$this->load->model("admin_delete");
 		$this->admin_delete->delete_row($user_id);
-		
+
 		header("Location: ../jobs_admin");
-	}		
+	}
+
+	public function logout(){
+		$this->session->unset_userdata('userId');
+		header("Location: login");
+
+	}
+
+	public function profile(){
+		$this->load->model("admin/account");
+	}
 }
 ?>
-	
